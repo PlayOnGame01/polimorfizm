@@ -8,21 +8,21 @@ class Fura : public Transport {
 	double load;
 	double max_load;
 	double machin_fura;
-	double max_petrol;
+	double max_fuel;
 
 public:
 	Fura() {
 		load = 0;
 		max_load = 0;
 		machin_fura = 0;
-		max_petrol = 0;
+		max_fuel = 0;
 	}
 
 	Fura(double l, double ml, double pl, double mpl) {
 		load = l;
 		max_load = ml;
 		machin_fura = pl;
-		max_petrol = mpl;
+		max_fuel = mpl;
 	}
 
 	int getCurrentLoad() {

@@ -4,28 +4,28 @@
 using namespace std;
 
 class Transport : public Base {
-	double petrol;
-	double max_petrol;
+	double fuel;
+	double max_fuel;
 
 public:
 	Transport() {
-		petrol = 0;
-		max_petrol = 0;
+		fuel = 0;
+		max_fuel = 0;
 	}
 
-	Transport(double pa, double tv) {
-		petrol = pa;
-		max_petrol = tv;
+	Transport(double fu, double mf) {
+		fuel = fu;
+		max_fuel = mf;
 	}
 
 	double getTankVolume() {
-		cout << "\nTank volume: " << max_petrol << " liters" << endl;
-		return max_petrol;
+		cout << "\nTank volume: " << max_fuel << " liters" << endl;
+		return max_fuel;
 	}
 
 	double getPetrolAmount() {
-		cout << "\nPetrol amount: " << petrol << " liters" << endl;
-		return petrol;
+		cout << "\nPetrol amount: " << fuel << " liters" << endl;
+		return fuel;
 	}
 
 	void Arrive() { 
@@ -39,12 +39,12 @@ public:
 
 	bool Leave() {
 		if (fuel != 0) {
-			if (fuel < petrol) {
+			if (fuel < fuel) {
 				cout << "\nDon't have enough petrol!" << endl;
 				return false;
 			}
-			else if (fuel > petrol && machin > 0) {
-				fuel -= petrol;
+			else if (fuel > fuel && machin > 0) {
+				fuel -= fuel;
 				machin -= 1;
 				return true;
 			}

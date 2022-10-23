@@ -7,21 +7,21 @@ using namespace std;
 class Insurgent : public Transport {
 	int people_insurgent;
 	int max_people;
-	double petrol;
+	double fuel;
 	double max_machin;
 
 public:
 	Insurgent() {
 		people_insurgent = 0;
 		max_people = 0;
-		petrol = 0;
+		fuel = 0;
 		max_machin = 0;
 	}
 
-	Insurgent(int pe, int mpe, double pl, double mpl) {
+	Insurgent(int pe, int mpe, double fl, double mpl) {
 		people_insurgent = pe;
 		max_people = mpe;
-		petrol = pl;
+		fuel = fl;
 		max_machin = mpl;
 	}
 
@@ -47,12 +47,12 @@ public:
 
 	bool Leave() {
 		if (product != 0) {
-			if (machin < petrol) {
+			if (machin < fuel) {
 				cout << "\nDon't have enough petrol!" << endl;
 				return false;
 			}
-			else if (machin > petrol && machin > 0 && people > 0) {
-				machin -= petrol;
+			else if (machin > fuel && machin > 0 && people > 0) {
+				machin -= fuel;
 				machin -= 1;
 				people -= people_insurgent;
 				return true;
